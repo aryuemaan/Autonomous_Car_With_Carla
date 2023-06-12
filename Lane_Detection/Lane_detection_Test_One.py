@@ -1,11 +1,11 @@
 import os
-for dirname, _, filenames in os.walk(r"C:\Users\aryuemaan\Videos\IMG_7524.MOV"):
+for dirname, _, filenames in os.walk(r"File Location"):
     for filename in filenames:
         print(os.path.join(dirname, filename))
 import cv2
 import numpy as np
 
-cap = cv2.VideoCapture(r"C:\Users\aryuemaan\Videos\IMG_7524.MOV")
+cap = cv2.VideoCapture(r"File Location")
 
 while (cap.isOpened()):
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 500)
