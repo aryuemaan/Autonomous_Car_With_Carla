@@ -1,0 +1,27 @@
+import carla
+import random
+import time
+def spawn_vehicles(world, number_of_vehicles):
+    blueprint_library = world.get_blueprint_library()
+    spawn_points = world.get_map().get_spawn_points()
+
+    for _ in range(number_of_vehicles):
+        spawn_point = random.choice(spawn_points)
+        blueprint = random.choice(blueprint_library.filter('vehicle.*'))
+        vehicle = world.spawn_actor(blueprint, spawn_point)
+        vehicle.set_autopilot(True)
+def main():
+    try:
+
+        client = carla.Client('localhost', 2000)
+        client.set_timeout(5.0)
+        world = client.get_world()
+        world.get_map().name = 'Town01'  # Change to 'Town02' if using a different map
+
+        spawn_vehicles(world, 5) 
+        time.sleep(20)
+
+    finally:
+        print('Simulation ended.')
+if __name__ == '__main__':
+    main()
