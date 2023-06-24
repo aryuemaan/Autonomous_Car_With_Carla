@@ -1,6 +1,7 @@
 # Autonomous Car Project
 
 This project aims to develop an autonomous car using the Carla simulation platform and Python simulations. The project is divided into multiple stages, starting with the implementation of basic Python structures before transitioning to the Carla simulator.
+For creating map we have to use RoadRunner software which is owened by Mathworks.
 
 ## Project Overview
 
